@@ -1,4 +1,7 @@
 Instagram::Application.routes.draw do
+  resources :items
+
+
   resources :notes
 
 
