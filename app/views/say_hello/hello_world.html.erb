@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <h2><%= @msg %></h2>
+    <%
+       d = Time.now
+       str = d.to_s
+    %>
+    <%= str%>
+    <form method="post" action="./hello_world">
+      <input type="text" id="txt1" name="txt1">
+      <input type="submit">
+    </form>
+  </body>
+</html>
