@@ -44,7 +44,7 @@ class SearchController < ApplicationController
       q = params['q']
       if q != nil then
         @target_tag    = q
-        @@target_path  = "/#{@target_tag}"
+        @@target_path  = URI.encode("/#{@target_tag}")
         @@target_url   = "https://api.instagram.com/v1/tags#{@@target_path}/media/recent?access_token="  
         @@base_url     = @@target_url + "#{@@access_token}"
         
