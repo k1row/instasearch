@@ -31,12 +31,6 @@ class SearchController < ApplicationController
   #https://api.instagram.com/v1/media/popular?access_token=223375.0a1df61.d452361af51c44efbe72437d0ab64764
   #https://api.instagram.com/v1/tags/search?q=food&access_token=223375.0a1df61.d452361af51c44efbe72437d0ab64764
 
-  # ENV['INSTAGRAM_TARGET_TAG']        = 'Instagram APIで検索するタグの文字列'
-  # ENV['INSTAGRAM_ACCESS_TOKEN']      = 'Instagram APIのアクセストークン'
-  # ENV['GOOGLE_ANALYTICS_ID']         = 'Google AnalyticsのID'
-  # ENV['STAGING_BASIC_AUTH_USERNAME'] = 'ステージング環境のBasic認証用ユーザーネーム'
-  # ENV['STAGING_BASIC_AUTH_PASSWORD'] = 'ステージング環境のBasic認証用パスワード'
-
   @target_tag   = ENV['INSTAGRAM_TARGET_TAG'] || 'car'
   @@target_path  = "/#{@target_tag}"
   @@target_url   = "https://api.instagram.com/v1/tags#{@@target_path}/media/recent?access_token="
