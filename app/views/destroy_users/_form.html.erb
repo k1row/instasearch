@@ -1,0 +1,17 @@
+<%= form_for(@destroy_user) do |f| %>
+  <% if @destroy_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@destroy_user.errors.count, "error") %> prohibited this destroy_user from being saved:</h2>
+
+      <ul>
+      <% @destroy_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,8 +1,16 @@
 Instagram::Application.routes.draw do
+  resources :destroy_users
+
+
+  resources :users
+
+
   get "hello_world/index"
   get "say_hello/hello_world"
   post "say_hello/hello_world"
 
+  get "search/index"
+  post "search/index"
   resources :items
 
 

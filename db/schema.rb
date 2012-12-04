@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129190553) do
+ActiveRecord::Schema.define(:version => 20121130021159) do
+
+  create_table "destroy_users", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "items", :force => true do |t|
     t.string   "name"
@@ -26,6 +31,17 @@ ActiveRecord::Schema.define(:version => 20121129190553) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "user_id"
+    t.string   "password"
+    t.string   "user_name"
+    t.string   "mail_address"
+    t.string   "invoke"
+    t.string   "active_record"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

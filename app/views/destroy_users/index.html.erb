@@ -1,0 +1,21 @@
+<h1>Listing destroy_users</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @destroy_users.each do |destroy_user| %>
+  <tr>
+    <td><%= link_to 'Show', destroy_user %></td>
+    <td><%= link_to 'Edit', edit_destroy_user_path(destroy_user) %></td>
+    <td><%= link_to 'Destroy', destroy_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Destroy user', new_destroy_user_path %>
