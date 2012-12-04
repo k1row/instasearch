@@ -31,11 +31,7 @@ class SearchController < ApplicationController
   #https://api.instagram.com/v1/media/popular?access_token=223375.0a1df61.d452361af51c44efbe72437d0ab64764
   #https://api.instagram.com/v1/tags/search?q=food&access_token=223375.0a1df61.d452361af51c44efbe72437d0ab64764
 
-  @target_tag   = ENV['INSTAGRAM_TARGET_TAG'] || 'car'
-  @@target_path  = "/#{@target_tag}"
-  @@target_url   = "https://api.instagram.com/v1/tags#{@@target_path}/media/recent?access_token="
   @@access_token = "223375.0a1df61.d452361af51c44efbe72437d0ab64764"
-  @@base_url     = @@target_url + "#{@@access_token}"
 
   @data         = []
   @error        = false
@@ -47,21 +43,30 @@ class SearchController < ApplicationController
     if @i == "search" then
       q = params['q']
       if q != nil then
-        @target_tag = q
+        @target_tag    = q
+        @@target_path  = "/#{@target_tag}"
+        @@target_url   = "https://api.instagram.com/v1/tags#{@@target_path}/media/recent?access_token="  
+        @@base_url     = @@target_url + "#{@@access_token}"
+        
+        logger.debug(@target_tag)
         create_data
       end
     end    
   end
   def create_data
+    logger.debug(@@base_url)
     json = parse_json(@@base_url)
     #json = p_json(@@base_url)
-    logger.debug(json.inspect)
+    #logger.debug(json.inspect)
     
+    if json == nil then
+      return
+    end
     #redirect_to :back  unless json['meta']['code'] && json['meta']['code'] == 200
     
     @data = extract_data(json['data'])
-    logger.debug(@data.inspect)
-    logger.debug "@@@ result @@@"
+    #logger.debug(@data.inspect)
+    #logger.debug "@@@ result @@@"
   end
   def p_json(url)
     #logger.debug "@@@ p_json @@@"
