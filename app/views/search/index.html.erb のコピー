@@ -5,7 +5,7 @@
 </head>
 <body>
   <!-- AMoAd Zone: [インライン_ブログ_TOPヘッダー_ニュース_CAA_CAA] -->
-  <div class="ad_frame sid_62056d310111552cf4f02a2b4d43f35c991532e03c749ca0d05b3424a4f0b181 container_div color_#0000CC-#444444-#FFFFFF-#0000FF-#009900 sp fit wv"></div>
+  <div class="ad_frame sid_b933b6ed285c118e8bfbfe360c8b7e3676e8e4716f7609ec1c4601d3354e92e8 container_div color_#0000CC-#000000-#999999-#0000FF-#009900 sp"></div>
 
   <h1>What kind of photograph do you want to see ?</h1>
   <form mothod="post" action="./index">
@@ -26,7 +26,7 @@
   
   <%#= debug(@result) %>
   <%#= debug(@request) %>
-  <script src='http://j.amoad.com/js/aa.js?link=${ADCLOUD_LINK_ENCODE}' type='text/javascript' charset='utf-8'></script>
+  <script src='http://j.amoad.com/js/aa.js' type='text/javascript' charset='utf-8'></script>
 </body>
 </html>
 
