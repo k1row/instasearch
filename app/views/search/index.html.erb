@@ -8,25 +8,6 @@ Advertisement here !!! <br>
 <div class="ad_frame sid_62056d310111552c1a8587de29171abe00e7b93dd4b39587f228691ad40d6932 container_div color_#0000CC-#000000-#999999-#0000FF-#009900 sp fit wv"></div>
 Advertisement here !!! <br>
 
-  <br>
-
-  <h1>What kind of photograph do you want to see ?</h1>
-  <form mothod="post" action="./index">
-	<input type="hidden" size="40" name="i" value="search" />
-    <input type="text" size="40" id="q" name="q"/>
-    <input type="submit" value="Search" />
-  </form>
-
-  <% if @data %>
-    <h2>You are looking for "<%= @target_tag %>" tag's photos.</h2>
-    <% @data.each do |data|  %>
-	  <%#= debug(data) %>
-	  <a href="<%= data['link'] %>"><%= image_tag data['thumbnail'] %></a>
-    <% end %>
-  <% elsif @i == 'search'  %>
-    <h2>Nothing ... such a tag's data</h2>
-  <% end %>
-
   <script src='http://j.amoad.com/js/aa.js?link=${ADCLOUD_LINK_ENCODE}' type='text/javascript' charset='utf-8'></script>
 </body>
 </html>
