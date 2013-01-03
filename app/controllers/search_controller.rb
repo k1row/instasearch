@@ -35,6 +35,7 @@ class SearchController < ApplicationController
 
   @data         = []
   @error        = false
+  @access_count = 0
   
   def index
     logger.debug "@@@ index @@@"
@@ -51,7 +52,25 @@ class SearchController < ApplicationController
         logger.debug(@target_tag)
         create_data
       end
+    else
+      counter
     end    
+  end
+  def counter
+    file = "count.dat"
+    begin
+      fp = open(file, "r")
+      counter = fp.gets.to_i + 1
+      fp.close
+    rescue
+      counter = 1
+    end
+    @access_count = counter
+    logger.debug "@@@ access_count @@@"
+    logger.debug(@access_count)
+    fp = open(file, "w")
+    fp.print counter
+    fp.close
   end
   def create_data
     logger.debug(@@base_url)
