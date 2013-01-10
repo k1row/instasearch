@@ -15,6 +15,9 @@ Instagram::Application.routes.draw do
   get "search/millennial"
   post "search/millennial"
 
+  get "search/opera"
+  post "search/opera"
+
 
   resources :items
 
