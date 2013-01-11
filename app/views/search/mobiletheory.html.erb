@@ -1,0 +1,273 @@
+
+<!doctype html>
+<html lang="en-US">
+
+<head>
+<title>Mobile Theory | Ad Tester</title>
+
+<link rel="stylesheet" type="text/css" href="/css/tester.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/tester.js"></script>
+
+</head>
+
+<body>
+<div id="info" style="width:100%;height:350px;background-color:#333;opacity:.8;color:white;position:fixed;top:0;left:0;display:none"></div>
+<script type="text/javascript">
+var getViewport = function(){
+    var e = window;
+    var a = 'inner';
+    if (!('innerWidth' in window)){
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+    return { w : e[ a+'Width' ] , h : e[ a+'Height' ] }
+};
+var $info = $('#info');
+function showInfo() {
+    $info.show();
+    var n = 0, type = '';
+    $(document).bind('scroll touchstart touchmove touchend touchcancel gesturestart gesturechange gestureend orientationchange', function(e) {
+        var now = new Date();
+        var vp = getViewport();
+        $info.html('<p>' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + ' :: win w(' + vp.w + ') h(' + vp.h + ') win x(' + window.pageXOffset + ') y(' + window.pageYOffset + ') :: ' + e.type + '</p>' + $info.html());
+    });
+}
+function hideInfo() {
+    $info.hide();
+    $(document).unbind('scroll touchstart touchmove touchend touchcancel gesturestart gesturechange gestureend orientationchange');
+}
+</script>
+<form id="formControl" method="GET">
+<div id="control" style="right:-500px">
+
+    <h1>Mobile Theory | Ad Tester</h1>
+    <div id="controlHide"><a class="button" href="javascript:void(0)">hide</a></div>
+    <ul class="tabs">
+            <li class="active"><a href="#tab1">ad server</a></li>
+            <li><a href="#tab2">device</a></li>
+            <li><a href="#tab3">content</a></li>
+        </ul>
+
+    <div class="tab_container">
+        <div id="tab1" class="tab_content">
+            <textarea id="adUrl" name="adUrl" style="width:100%;margin:0">http://impel.mobiletheory.com/d6?%20keywords=gree_test</textarea>
+			<div class="buttonDiv">
+		        <a class="button" href="javascript:void(0)" onclick="$('#formControl').submit();">apply</a>
+		    </div>
+<br><br>
+<div><label for="chkinfo">toggle info</label><input id="chkinfo" type="checkbox"></div>
+<div><label for="iframe">iframe embed</label><input id="iframe" type="checkbox" name="iframe" ></div>
+<script>
+$('#chkinfo').click(function() {
+    var $this = $(this);
+    if ($this.is(':checked')) { showInfo(); }
+    else { hideInfo(); }
+});
+</script>
+        </div>
+
+		<div id="tab2" class="tab_content" style="display:none">
+	        <p class="devices">
+	        <del>android</del> | <del>blackberry</del> | <del>ipad</del> | <del>iphone</del> | <del>ipod</del>	        </p>
+	        <p>Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11</p>
+
+	        <table cellpadding="1" cellspacing="0" border="0" width="100%">
+		        <tr class="row2"><td>viewport resolution</td><td id="viewportResolution">calculating ...</td></tr>
+		        <tr><td>document resolution</td><td id="documentResolution">calculating ...</td></tr>
+	        </table>
+	    </div>
+
+		<div id="tab3" class="tab_content" style="display:none">
+			<p>enter a url to simulate what the ad on any given website</p>
+			<label for="contentUrl">simulation url</label>
+	        <input id="contentUrl" name="contentUrl" value=""/>
+			<div class="buttonDiv">
+		        <a class="button" href="javascript:void(0)" onclick="$('#formControl').submit();">apply</a>
+		    </div>
+		    		</div>
+
+			    </div>
+</div>
+</form>
+
+<div id="controlShow" style="right:-5px">
+	<a class="button" href="javascript:void(0)">mobile theory configuration</a>
+</div>
+
+        <script type="text/javascript" src="http://impel.mobiletheory.com/d6?%20keywords=gree_test"></script>
+    
+<div id="placeholder">
+    <div id="report" style="max-height:250px;font-size:300%"></div>
+
+    <img src="/image/mobile_theory.gif" alt="logo">
+    <h1>This is a website</h1>
+
+    <h2>Lorem Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus odio vel justo sodales dapibus. Vivamus viverra, lorem ac interdum accumsan, turpis arcu tincidunt lectus, a bibendum enim magna non magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam pretium dolor a mi lobortis varius vel nec ipsum. Pellentesque lacinia mauris velit, at fringilla dui. Sed accumsan ultricies mauris, ut luctus leo accumsan in. Curabitur placerat dui ac nunc porttitor ullamcorper. Ut aliquam luctus massa a ultricies. In elementum, nulla vitae dictum ornare, ante turpis blandit nisi, id dictum augue turpis non sem. In sollicitudin eros ac justo pretium gravida. Fusce vehicula pulvinar massa quis congue. Vivamus a nisi urna. Suspendisse tincidunt risus at purus cursus interdum. Cras erat metus, venenatis fringilla blandit ut, mattis eget enim. Nunc dictum urna at velit interdum quis sodales felis ullamcorper. Morbi a lacus nec odio lacinia blandit nec ac tellus.</p>
+
+    <h2>Flash Content</h2>
+    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="900" height="318" id="MyFlash" align="middle">
+        <param name="allowScriptAccess" value="sameDomain" />
+        <param name="movie" value="/swf/MyFlash.swf" />
+        <param name="loop" value="false" />
+        <param name="menu" value="false" />
+        <param name="quality" value="high" />
+        <param name="wmode" value="opaque" />
+        <param name="bgcolor" value="#ffffff" />
+        <embed src="/swf/MyFlash.swf" loop="false" menu="false" quality="high" wmode="opaque" bgcolor="#ffffff" width="238" height="318" name="Finish" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+        <noembed><p style="color:black">your browser does not support flash. :(</p></noembed>
+    </object>
+
+    <h2>Aliquam Gravida Venenatis</h2>
+    <ul>
+        <li>Etiam libero augue, semper in ullamcorper nec</li>
+        <li>Aliquam et sem ac elit elementum feugia</li>
+        <li>Duis non nunc non purus tempus</li>
+        <li>Donec auctor dolor ac leo placerat tristique eu eget nunc</li>
+        <li>Pellentesque id justo sed lectus rutrum</li>
+        <li>Maecenas nec odio et nisi varius accumsan</li>
+        <li>Phasellus nec nisl lectus</li>
+        <li>Donec urna velit, sagittis rutrum lobortis</li>
+        <li>Proin hendrerit enim non urna pretium iaculis</li>
+        <li>Nam gravida ligula a odio sagittis at hendrerit mi</li>
+    </ul>
+
+    <h2>Donec Curabitur</h2>
+    <p>Donec vitae nunc ipsum. Curabitur quam velit, semper lobortis tincidunt sed, consectetur sed nisi. Phasellus quis enim et mi porta mollis. Curabitur ut enim ac quam congue pretium ut sit amet tellus. Sed ligula lorem, vehicula nec rutrum iaculis, sollicitudin id magna. Nulla facilisi. Sed vitae tellus velit. In vel sagittis libero. Aliquam erat volutpat. Donec a tristique lectus. Nullam placerat rutrum diam nec aliquam. In consequat, dui nec pellentesque suscipit, orci tellus feugiat est, sit amet rutrum tortor libero ac odio. Phasellus metus metus, dapibus quis semper rhoncus, aliquam at nibh.</p>
+
+    <h2>Facilisi Tempor</h2>
+
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. In turpis pulvinar facilisis. Ut felis.</p>
+
+    <h2>Facilisis</h2>
+
+    <ol>
+       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+       <li>Aliquam tincidunt mauris eu risus.</li>
+       <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+       <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+       <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+       <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+    </ol>
+
+    <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+    <h2>Rutrum</h2>
+
+    <ul>
+       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+       <li>Aliquam tincidunt mauris eu risus.</li>
+       <li>Vestibulum auctor dapibus neque.</li>
+    </ul>
+
+    <h2>Example in PHP</h2>
+    <pre><code>
+
+    function Y($F) {
+        $func =  function ($f) { return $f($f); };
+        return $func(function ($f) use($F) {
+                return $F(function ($x) use($f) {
+                $ff = $f($f);
+                return $ff($x);
+            });
+        });
+    }
+
+    $factorial = Y(function($fact) {
+        return function($n) use($fact) {
+            return ($n <= 1)?1:$n*$fact($n-1);
+        };
+    });
+
+    var_dump($factorial(6)); ==> int(720)
+
+    // or ...
+
+    $factorial = function($n) use (&$factorial) {
+          if ($n <= 1)
+            return 1;
+          else
+            return $n * $factorial($n - 1);
+    };
+
+    </code></pre>
+
+    <h2>Nulla Integer Quisque</h2>
+    <p>Integer vel urna sapien. Nulla semper nibh ac magna vehicula ut ultricies lectus vehicula. Quisque molestie aliquet tempor. Integer rutrum, nibh et venenatis ultricies, orci erat blandit tellus, in facilisis massa ante vel ipsum. Phasellus congue urna sed tortor consequat quis eleifend purus aliquam. Morbi imperdiet libero non orci luctus nec adipiscing justo elementum. Nullam gravida nunc a tortor cursus rhoncus. Morbi vulputate, quam ac hendrerit ultricies, turpis magna placerat quam, eu blandit nisl mi non elit. Cras nulla eros, posuere nec varius quis, tincidunt laoreet dolor. Aliquam lobortis, felis eu porta porta, nulla nisi ornare mauris, sit amet mattis mi risus et dui. Morbi fringilla convallis risus, eu eleifend turpis sollicitudin aliquet. Donec adipiscing cursus erat, a sagittis lorem placerat nec. Duis faucibus auctor placerat.</p>
+
+</div>
+
+<script type="text/javascript">
+document.getElementById("viewportResolution").innerHTML = $(window).width() + " x " + $(window).height();
+document.getElementById("documentResolution").innerHTML = $(document).width() + " x " + $(document).height();
+
+$(document).ready(function()
+{
+    $('#controlHide').click(function(){
+    	$.cookie('controlHidden', 1);
+        $("#controlShow").animate({right:-5});
+        $("#control").animate({right:-500});
+    });
+
+    $('#controlShow').click(function(){
+    	$.cookie('controlHidden', 0);
+        $("#controlShow").animate({right:-500});
+        $("#control").animate({right:-2});
+    });
+
+    $('#control input').keydown(function(e){
+        if (e.keyCode == 13) {
+            $(this).parents('form').submit();
+            return false;
+        }
+    });
+
+	//On Click Event
+	$("ul.tabs li").click(function()
+	{
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+
+		var $activeTab = $($(this).find("a").attr("href")); //Find the href attribute value to identify the active tab + content
+		$activeTab.fadeIn(); //Fade in the active ID content
+		var tabId = $activeTab.attr('id');
+		var tabNumber = tabId.replace('tab', '');
+		$.cookie('activeTab', tabNumber);
+		return false;
+	});
+
+	
+	document.getElementById("viewportResolution").innerHTML = $(window).width() + " x " + $(window).height();
+	document.getElementById("documentResolution").innerHTML = $(document).width() + " x " + $(document).height();
+
+    $(window).resize(function() {
+    	document.getElementById("viewportResolution").innerHTML = $(window).width() + " x " + $(window).height();
+    	document.getElementById("documentResolution").innerHTML = $(document).width() + " x " + $(document).height();
+    });
+
+});
+
+/*
+if (window.top == top)
+    console.log('window top == top')
+else
+    console.log('window top != top');
+
+if (window.parent != window)
+{
+    console.log('i am the iframe');
+}
+else
+{
+    console.log('i am not the iframe');
+}
+*/
+
+
+</script>
+</body>
+</html>
+

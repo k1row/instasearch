@@ -18,6 +18,8 @@ Instagram::Application.routes.draw do
   get "search/opera"
   post "search/opera"
 
+  get "search/mobiletheory"
+  post "search/mobiletheory"
 
   resources :items
 
