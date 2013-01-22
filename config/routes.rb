@@ -24,6 +24,8 @@ Instagram::Application.routes.draw do
   get "search/huntmobile"
   post "search/huntmobile"
 
+  get "search/sample"
+  post "search/sample"
 
   resources :items
 
