@@ -27,6 +27,9 @@ Instagram::Application.routes.draw do
   get "search/sample"
   post "search/sample"
 
+  get "search/test_amoad"
+  post "search/test_amoad"
+
   resources :items
 
 
