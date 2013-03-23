@@ -31,7 +31,7 @@ class SearchController < ApplicationController
   #https://api.instagram.com/v1/media/popular?access_token=223375.0a1df61.d452361af51c44efbe72437d0ab64764
   #https://api.instagram.com/v1/tags/search?q=food&access_token=223375.0a1df61.d452361af51c44efbe72437d0ab64764
 
-  @@access_token = "223375.0a1df61.d452361af51c44efbe72437d0ab64764"
+  @@access_token = ""
 
   @data         = []
   @error        = false
